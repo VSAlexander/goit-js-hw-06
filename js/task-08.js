@@ -13,8 +13,9 @@ function handleSubmit(event) {
     formData.forEach((value, key) => {
       formDataObject[key] = value;
     });
-    return console.log(formDataObject);
+    console.log(formDataObject);
   }
+  event.currentTarget.reset();
 }
 
 form.addEventListener("submit", handleSubmit);

@@ -15,9 +15,18 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 
-function createImg(image) {
-  const markup = `<li><img src="${image.url}" alt="${image.alt}" width="450" height="300"></li>`;
-  gallery.insertAdjacentHTML("afterbegin", markup);
-}
+// function createImg(image) {
+//   const markup = `<li><img src="${image.url}" alt="${image.alt}" width="450" height="300"></li>`;
+//   gallery.insertAdjacentHTML("afterbegin", markup);
+// }
 
-images.forEach((image) => createImg(image));
+// images.forEach((image) => createImg(image));
+
+const markup = images
+  .map(
+    (image) =>
+      `<li><img src="${image.url}" alt="${image.alt}" width="450" height="300"></li>`
+  )
+  .join("");
+
+gallery.insertAdjacentHTML("afterbegin", markup);

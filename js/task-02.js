@@ -9,12 +9,22 @@ const ingredients = [
 
 const ingredientsList = document.querySelector("#ingredients");
 
-function createIngredient(name) {
+// function createIngredient(name) {
+//   const li = document.createElement("li");
+//   li.classList.add("item");
+//   li.textContent = name;
+//   ingredientsList.append(li);
+//   console.log(li);
+// }
+
+// ingredients.forEach((name) => createIngredient(name));
+
+const elements = ingredients.map((ingredient) => {
   const li = document.createElement("li");
   li.classList.add("item");
-  li.textContent = name;
-  ingredientsList.append(li);
-  console.log(li);
-}
+  li.textContent = ingredient;
 
-ingredients.forEach((name) => createIngredient(name));
+  return li;
+});
+
+ingredientsList.append(...elements);
